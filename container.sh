@@ -1,2 +1,2 @@
 docker run -d  --name web nginx
-docker logs web
+docker exec web ls /usr/share/nginx/html

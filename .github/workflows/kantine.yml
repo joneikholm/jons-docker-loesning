@@ -1,0 +1,8 @@
+name: kantine
+on: push
+jobs:
+  kantine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash kantine/kokken.sh

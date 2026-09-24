@@ -9,3 +9,8 @@ jobs:
       - run: docker run -d --name mincontainer -p 9090:8000 minside
       - run: sleep 2 && curl -f localhost:9090
       - run: docker rm -f mincontainer
+      - run: docker rmi minside
+      - run: docker build -t minside .
+      - run: docker run -d --name mincontainer -p 9090:8000 minside
+      - run: sleep 2 && curl -f localhost:9090
+      - run: docker rm -f mincontainer

@@ -5,4 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: bash hjemme.sh
+      - run: docker build -t myimage .
+      - run: docker run -d myimages

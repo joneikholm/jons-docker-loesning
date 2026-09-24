@@ -6,4 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: docker build -t minside .
-      - run: docker run -d --name mincontainer minside
+      - run: docker run -d --name mincontainer -p 8080:8000 minside
+      - run: sleep 2 && curl -f localhost:8080
+      - run: docker rm -f mincontainer
